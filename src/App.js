@@ -1,9 +1,10 @@
 import logo from "./logo.svg";
 import "./App.css";
-import GetData from "./uess";
-import PostData from "./admin";
+import GetData from "./compoment/shop";
+import PostData from "./compoment/product";
 import { Route, Redirect, Routes } from "react-router-dom";
 import { BrowserRouter } from "react-router-dom";
+
 function App() {
   return (
     <BrowserRouter>
@@ -12,10 +13,10 @@ function App() {
           <nav className="main-header__nav">
             <ul className="main-header__item-list">
               <li className="main-header__item">
-                <a href="/">user</a>
+                <a href="/">shop</a>
               </li>
               <li className="main-header__item">
-                <a href="/adduser">adduser</a>
+                <a href="/admin/add-product">Addproduct</a>
               </li>
             </ul>
           </nav>
@@ -23,7 +24,7 @@ function App() {
         <div>
           <Routes>
             <Route exact path="/" element={<GetData />} />
-            <Route exact path="/adduser" element={<PostData />} />
+            <Route exact path="/admin/add-product" element={<PostData />} />
           </Routes>
         </div>
       </div>
